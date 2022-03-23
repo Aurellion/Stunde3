@@ -66,20 +66,67 @@ namespace Stunde3
             // anonsten von vorn beginnen.
             int a, b;
 
+            //do
+            //{
+            //    Console.WriteLine("Bitte nacheinander zwei ganze Zahlen eingeben");
+            //    Console.Write("a=");
+            //    a = Convert.ToInt32( Console.ReadLine() );
+            //    Console.Write("b=");
+            //    b = Convert.ToInt32( Console.ReadLine() );
+            //} while (a + b < 125);
+
+
+            // Der Benutzer soll nach einer Jahreszahl gefragt werden und es
+            // soll ausgegeben werden ob es sich um ein Schaltjahr handelt.
+            // Schaltjahr: teilbar durch 4; nicht teilbar durch 100; teilbar durch 400
+
+            int jahr;
+            string wiederholung;
             do
             {
-                Console.WriteLine("Bitte nacheinander zwei ganze Zahlen eingeben");
-                Console.Write("a=");
-                a = Convert.ToInt32( Console.ReadLine() );
-                Console.Write("b=");
-                b = Convert.ToInt32( Console.ReadLine() );
-            } while (a + b < 125);
+                Console.WriteLine("Eine Jahreszahl soll auf Schaltjahr überprüft werden.");
+                Console.Write("Jahrezahl eingeben:");
 
+                jahr = Convert.ToInt32( Console.ReadLine() );
 
-            // Der Benutzer soll nach einer jahreszahl gefragt werden und es
-            // soll ausgegeben werden ob es sich um ein Schaltjahr handelt.
+                if (jahr % 4 == 0 && ((jahr % 100 != 0) || jahr % 400 == 0))
+                {
+                    Console.WriteLine(jahr + " ist ein Schaltjahr.");
+                }
+                else
+                {
+                    Console.WriteLine(jahr + " ist kein Schaltjahr.");
+                }
+                
 
+                //if (jahr % 4 == 0)
+                //{
+                //    if (jahr % 100 == 0)
+                //    {
+                //        if (jahr % 400 == 0)
+                //        {
+                //            Console.WriteLine(jahr + " ist ein Schaltjahr.");
+                //        }
+                //        else
+                //        {
+                //            Console.WriteLine(jahr + " ist kein Schaltjahr.");
+                //        }
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine(jahr + " ist ein Schaltjahr.");
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine(jahr + " ist kein Schaltjahr.");
+                //}
 
+                Console.Write("Nochmal? (j/n):");
+                wiederholung = Console.ReadLine();
+            } while (wiederholung=="j" || wiederholung=="J");
+
+            //oder: ||     und: &&
 
         }
     }
